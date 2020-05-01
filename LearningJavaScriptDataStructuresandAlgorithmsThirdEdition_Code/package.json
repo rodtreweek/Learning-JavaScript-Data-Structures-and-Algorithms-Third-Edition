@@ -31,7 +31,9 @@
     "generate-report2": "nyc --report-dir coverage npm run test",
     "go": "npm run clean && npm run lint && npm run build && npm run test",
     "webpack": "webpack --env build",
-    "serve": "http-server"
+    "serve": "http-server",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "include": [
@@ -80,6 +82,8 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
-    "http-server": "^0.11.1"
-  }
+    "http-server": "^0.11.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
